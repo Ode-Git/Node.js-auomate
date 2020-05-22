@@ -1,0 +1,96 @@
+{
+  "name": "@open-wa/wa-automate",
+  "version": "1.9.41",
+  "licenseCheckUrl": "https://open-wa.glitch.me/license-check",
+  "brokenMethodReportUrl": "https://open-wa.glitch.me/report-bm",
+  "description": " 💬 🤖 The most advanced NodeJS whatsapp library for chatbots with advanced features.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist/ && tsc && npm run build:middleware && npm run build:lib",
+    "build:skipmid": "tsc && npm run build:lib",
+    "build:lib": "ts-node prebuild.ts",
+    "build:middleware": "tsc --out src/lib/middleware.js src/middleware/middleware.ts --module amd",
+    "watch": "npm run build && tsc-watch ./src/index.ts --outDir ./dist --onSuccess \"node ./dist/index.js\" --onFailure \"echo Error while compiling\" --compiler typescript/bin/tsc",
+    "clean": "rm -rf session && rm -rf dist",
+    "clean:full": "rm -rf node_modules && npm run clean",
+    "precise-commits": "precise-commits",
+    "test": "echo \"No tests yet\"",
+    "release": "release-it",
+    "release-ci": "release-it --ci",
+    "release-image": "node release-image.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": ""
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-wa/wa-automate-nodejs.git"
+  },
+  "keywords": [
+    "whatsapp",
+    "javascript",
+    "bot",
+    "typescript",
+    "automation",
+    "puppeteer"
+  ],
+  "author": "Mohammed Shah <@smashah>",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "H-DNH V1.0",
+  "bugs": {
+    "url": "https://github.com/open-wa/wa-automate-nodejs/issues"
+  },
+  "homepage": "https://github.com/open-wa/wa-automate-nodejs#readme",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@types/changelog-parser": "^2.7.1",
+    "@types/command-line-args": "^5.0.0",
+    "@types/line-reader": "0.0.29",
+    "@types/marked": "^0.7.2",
+    "@types/node": "^14.0.1",
+    "@types/puppeteer": "^3.0.0",
+    "@types/shelljs": "^0.8.5",
+    "auto-changelog": "^2.0.0",
+    "changelog-parser": "^2.8.0",
+    "command-line-args": "^5.1.1",
+    "husky": "^4.2.3",
+    "line-reader": "^0.4.0",
+    "marked": "^1.0.0",
+    "precise-commits": "^1.0.2",
+    "prettier": "^2.0.1",
+    "release-it": "^13.0.1",
+    "ts-node": "^8.4.1",
+    "tsc-watch": "^4.0.0",
+    "typedoc": "^0.17.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "@open-wa/wa-decrypt": "^1.1.5",
+    "@types/sharp": "^0.25.0",
+    "atob": "^2.1.2",
+    "axios": "^0.19.1",
+    "chrome-launcher": "^0.13.0",
+    "death": "^1.1.0",
+    "eventemitter2": "^6.0.0",
+    "futoin-hkdf": "^1.2.1",
+    "image-type": "^4.1.0",
+    "lodash.uniq": "^4.5.0",
+    "puppeteer": "^3.0.0",
+    "puppeteer-extra": "^3.1.9",
+    "puppeteer-extra-plugin-devtools": "^2.2.8",
+    "puppeteer-extra-plugin-stealth": "^2.4.9",
+    "qrcode-terminal": "^0.12.0",
+    "rxjs": "^6.5.3",
+    "sharp": "^0.25.1",
+    "shelljs": "^0.8.3",
+    "spinnies": "^0.5.1",
+    "update-notifier": "^4.1.0"
+  }
+}

@@ -75,7 +75,7 @@
     "@open-wa/wa-decrypt": "^1.1.5",
     "@types/sharp": "^0.25.0",
     "atob": "^2.1.2",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "chrome-launcher": "^0.13.0",
     "death": "^1.1.0",
     "eventemitter2": "^6.0.0",
